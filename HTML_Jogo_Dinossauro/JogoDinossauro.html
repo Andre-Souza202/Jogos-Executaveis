@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+	<meta charset="viewport" content="width=device-width, initial-scale=1.0">
+	<meta charset="UTF-8">
+	<link rel="stylesheet" href="jogoCSS.css">
+	<title>Dino Game</title>
+</head>
+<body>
+	<div id="aluno">
+		<div id="game-container">
+			<div id="background2"></div>
+			<div id="background"></div>
+			<div id="dino"></div>
+			<div id="score">0</div>
+		</div>
+		<h2>André Guilherme de Souza</h2>
+		<h2>00112908</h2>]
+	</div>
+	<script>
+		document.addEventListener('DOMContentLoaded', function() {
+		const dino = document.getElementById('dino');
+		const gameContainer = document.getElementById('game-container');
+		const scoreDisplay = document.getElementById('score');
+		let isJumping = false;
+		let score = 0;
+		let keyPressed = false;
+		
+		//Se atualizar a pagina os obstaculos nao pegam a colisao ate o jogador pular
+		//passando por essas linhas de codigo
+		let currentPosition = parseInt(dino.style.bottom) || 0;
+		dino.style.bottom = currentPosition + 'px';
+		
+		document.addEventListener('keydown', function(event) {
+			if (event.code === 'Space' && keyPressed === false) {
+			keyPressed = true;
+			jump();
+			}
+		});
+		document.addEventListener('keyup', function(event) {
+			if (event.code === 'Space') {
+			keyPressed = false;
+			}
+		});
+
+		function jump() {
+			if (isJumping) return;
+			isJumping = true;
+			let currentPosition = parseInt(dino.style.bottom) || 0;
+			let newPosition = currentPosition + 100; // Altura do pulo
+			dino.style.bottom = newPosition + 'px';
+			setTimeout(function() {
+			dino.style.bottom = currentPosition + 'px'; // Volta para a posição original
+			isJumping = false;
+			}, 500); // Tempo do pulo
+		}
+
+		function createObstacle() {
+			const obstacle = document.createElement('div');
+			obstacle.classList.add('obstacle');
+			gameContainer.appendChild(obstacle);
+
+			let obstaclePosition = 800;
+			obstacle.style.left = obstaclePosition + 'px';
+
+
+			let timerId = setInterval(function() {
+				if (obstaclePosition < -20) {
+					clearInterval(timerId);
+					gameContainer.removeChild(obstacle);
+				}
+
+				obstaclePosition -= 5;
+				obstacle.style.left = obstaclePosition + 'px';
+
+				let dinoBottom = parseInt(dino.style.bottom);
+				let obstacleLeft = parseInt(obstacle.style.left);
+
+				// Verificar colisão
+				if (obstacleLeft <= 60 && obstacleLeft > 20 && dinoBottom < 50) {
+					clearInterval(timerId);
+				alert('Game Over! Your score: ' + score);
+				resetGame();
+				}
+			}, 20);
+
+			setTimeout(createObstacle, 6000);
+		}
+
+		function resetGame() {
+			const obstacles = document.querySelectorAll('.obstacle');
+			obstacles.forEach(obstacle => obstacle.parentNode.removeChild(obstacle));
+			score = 0;
+			scoreDisplay.innerText = score;
+		}
+		
+		function scoreTimer(){
+			score++;
+			scoreDisplay.innerText = score;
+			setTimeout(scoreTimer, 1000);
+		}
+		
+		scoreTimer();
+		createObstacle();
+	});
+	</script>
+</body>
+</html>

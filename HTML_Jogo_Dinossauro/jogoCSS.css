@@ -1,0 +1,129 @@
+body{
+	display:flex;
+	align-items: center;
+	justify-content: center;
+	background-color: #0d0e17;
+	text-align: center;
+	height: 90vh;
+}
+
+h2{
+	color: #00780a;
+	font-size: 32px;
+	text-align: center;
+}
+
+#game-container {
+    width: 800px;
+    height: 313px;
+    background-color: #f7f7f7;
+    position: relative;
+    border: 3px solid #05204d;
+    overflow: hidden;
+}
+
+#aluno{
+	
+}
+
+#background {
+    width: 1600px; /* Largura do cenário de fundo */
+    height: 313px;
+    background-image: url('imagens/caveFrente.png'); /* Imagem de fundo */
+    position: absolute;
+    left: 0;
+    top: 0;
+    animation: moveBackground 10s linear infinite; /* Animação de movimento */
+}
+
+#background2 {
+    width: 1600px; /* Largura do cenário de fundo */
+    height: 313px;
+    background-image: url('imagens/caveFundo.png'); /* Imagem de fundo */
+    position: absolute;
+    left: 0;
+    top: 0;
+    animation: moveBackground 25s linear infinite; /* Animação de movimento */
+}
+
+#dino {
+    width: 64px; 
+    height: 64px;
+    background-image: url("imagens/DinoAndar1.png");
+    position: absolute;
+    bottom: 0;
+    left: 50px;
+    transition: bottom 0.3s ease; /* Transição para suavizar o movimento */
+	animation: movePlayer 1s infinite linear;
+}
+
+.obstacle {
+    width: 39px;
+    height: 75px;
+    background-image: url("imagens/obstacle.png");
+    position: absolute;
+    bottom: 0;
+    transition: left 0.05s linear;
+}
+
+#score {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    font-size: 32px;
+	font-weight: bold;
+	color: white;
+}
+
+@keyframes moveBackground {
+    0% {
+		left: 0;
+    }
+    100% {
+		left: -800px; /* Deslocamento total igual à largura do contêiner */
+    }
+}
+
+@keyframes moveBackground2 {
+    0% {
+		left: 0;
+    }
+    100% {
+		left: -800px; /* Deslocamento total igual à largura do contêiner */
+    }
+}
+
+@keyframes movePlayer{
+	0% {
+		background-image: url("imagens/DinoAndar1.png");
+		opacity: 1;
+	}
+	12% {
+		background-image: url("imagens/DinoAndar2.png");
+		opacity: 1;
+	}
+	24% {
+		background-image: url("imagens/DinoAndar3.png");
+		opacity: 1;
+	}
+	36% {
+		background-image: url("imagens/DinoAndar4.png");
+		opacity: 1;
+	}
+	48% {
+		background-image: url("imagens/DinoAndar5.png");
+		opacity: 1;
+	}
+	60% {
+		background-image: url("imagens/DinoAndar6.png");
+	}
+	72% {
+		background-image: url("imagens/DinoAndar7.png");
+		opacity: 1;
+	}
+	84% {
+		background-image: url("imagens/DinoAndar8.png");
+		opacity: 1;
+	}
+
+}
