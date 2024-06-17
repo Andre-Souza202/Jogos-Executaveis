@@ -3,6 +3,8 @@
 <br />
 Feito no Unity
 <br />
+Jogo Side-Scroller
+<br />
 PC
 <br />
 <br />
