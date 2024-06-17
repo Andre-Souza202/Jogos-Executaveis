@@ -2,9 +2,10 @@
 <br />
 <br />
 Feito no Unity
-Jogo de Plataforma
-PC
 <br />
+Jogo de Plataforma
+<br />
+PC
 <br />
 <br />
 Jogo desenvolvido no começo do meu quarto semestre como se fosse uma Game Jam, durante 5 dias juntando todas as salas do curso de Jogos Digitais, dando um total de umas 32 pessoas. Fiquei responsavel 
