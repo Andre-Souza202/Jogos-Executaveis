@@ -1,8 +1,8 @@
 # AJAN
 <br />
-## Feito no Unity
+Feito no Unity
 <br />
-## PC
+PC
 <br />
 <br />
 Feito como Projeto Integrador do meu primeiro semestre e sendo meu primeiro jogo "completinho" com sons, menu, animações etc.  Grupo de 6 pessoas, eu fiquei responsável pela programação junto com outro membro, colaborando apenas em alguns detalhes na parte da arte. Também é meu primeiro jogo feito em grupo e é de se esperar que a gente ainda não tinha muita química, então não espere um jogo bonito e super bem feito porque se não vai se decepcionar kk
