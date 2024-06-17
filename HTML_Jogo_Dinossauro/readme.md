@@ -8,4 +8,6 @@ Jogo de correr infinitamente
 WEB
 <br />
 <br />
-Feito para a aula de Desenvolvimento Web durante meu quarto semestre, um jogo parecido com o do Dinossauro do Google. Bem simples, possui apenas animações e um obstáculo que fica se repetindo 
+Feito para a aula de Desenvolvimento Web durante meu quarto semestre, um jogo parecido com o do Dinossauro do Google. Bem simples, possui apenas animações e um obstáculo que fica se repetindo.
+<br />
+Para jogar só abrir o arquivo .html em um navegador.
