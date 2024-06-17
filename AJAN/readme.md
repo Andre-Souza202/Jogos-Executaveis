@@ -2,6 +2,8 @@
 <br />
 Feito no Unity
 <br />
+Jogo de Plataforma e Side-Scroller
+<br />
 PC
 <br />
 <br />
